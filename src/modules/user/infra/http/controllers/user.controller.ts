@@ -1,20 +1,10 @@
-import { User } from "../../../domain/entities/user";
-import { UserService } from "../routes/user.service";
-import { HttpRequest, IControllerUser } from "../../../../../controllers/interfaces/contoller";
+import { CreateUserUseCase } from "../../../domain/usecases/create/createUser.usecase";
 
-export class UserController implements IControllerUser {
-  constructor(private readonly userService: UserService) {}
+export class UserController {
+  constructor(private readonly createUserUseCase: CreateUserUseCase) {}
 
-  createUser(req: HttpRequest) {
-    const payload = {
-      name: req.body.name,
-      email: req.body.email,
-      cpf: req.body.cpf,
-      cellPhone: req.body.cellPhone,
-      birthDate: req.body.birthDate,
-      address: req.body.address,
-    };
-
-    this.userService.createUser(payload);
+  async createUser(request: any): Promise<any> {
+    const payload = {} as any;
+    this.createUserUseCase.execute(payload);
   }
 }
