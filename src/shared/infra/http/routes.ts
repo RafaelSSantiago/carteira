@@ -1,8 +1,6 @@
-import { Router } from "express";
-import { UserController } from "../../../modules/user/infra/http/controllers/user.controller";
+import { Express } from "express";
+import userRouter from "../../../../src/modules/user/infra/http/routes/user.routes";
 
-const router = Router();
-
-const userController = router("/user", UserController);
-
-export default router
+export default function routes(app: Express) {
+  app.use("/user", userRouter);
+}
