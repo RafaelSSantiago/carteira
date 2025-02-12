@@ -1,6 +1,6 @@
 import { Wallet } from "../../../wallet/domain/entities/wallet";
 
-interface Address {
+export interface Address {
   street: string;
   number: string;
   city: string;
@@ -16,7 +16,7 @@ export class User {
     private cellPhone: string,
     private birthDate: string,
     private address: Address,
-    private wallet: Wallet
+    private walletId: string
   ) {}
 
   get _id(): string {
@@ -47,11 +47,11 @@ export class User {
     return this.address;
   }
 
-  get _wallet(): Wallet {
-    return this.wallet;
+  get _walletId(): string {
+    return this.walletId;
   }
 
-  set _wallet(wallet: Wallet) {
-    this.wallet = wallet;
+  set _wallet(walletId: string) {
+    this.walletId = walletId;
   }
 }

@@ -8,7 +8,10 @@
     "strict": true /* Habilita todas as verificações estritas */,
     "esModuleInterop": true /* Permite importação padrão para módulos CommonJS */,
     "skipLibCheck": true /* Pula verificação de tipos em arquivos de declaração (.d.ts) */,
-    "forceConsistentCasingInFileNames": true /* Garante que os arquivos sejam referenciados com a mesma capitalização */
+    "forceConsistentCasingInFileNames": true /* Garante que os arquivos sejam referenciados com a mesma capitalização */,
+    "strictPropertyInitialization": false /* Permite a inicialização de propiedades sem valor atribuido em uma classe*/,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true
   },
   "include": ["src/**/*"] /* Define quais arquivos/pastas serão incluídos na compilação */,
   "exclude": ["node_modules", "**/*.spec.ts"] /* Define quais arquivos/pastas serão excluídos da compilação */
