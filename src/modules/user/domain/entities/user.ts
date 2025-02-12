@@ -1,5 +1,3 @@
-import { Wallet } from "../../../wallet/domain/entities/wallet";
-
 export interface Address {
   street: string;
   number: string;
